@@ -1,5 +1,6 @@
-#+ Title : Documentation on MULtiplexer Experiment
-#+ Author : Sadhana
+#+Title : Documentation on MULtiplexer Experiment
+
+#+Author : Sadhana
 
 ** Technologies Used : HTML,CSS,javascript
 
