@@ -1,0 +1,17 @@
+var enableEvents = function($o, enable) {
+    if($o.context.textContent == 'In') {
+      if($o.context.className.baseVal.split(" ").indexOf("simcir-device-selected") > -1) {
+        if($o.context.volts === undefined) {
+          $o.context.volts = false;
+        }
+        $o.context.volts = !$o.context.volts;
+        if($o.context.volts) {
+          $o.context.classList.add("high-volts");
+        }
+        else {
+          $o.context.classList.remove("high-volts");
+        }
+      }
+    }
+    $o.css('pointer-events', enable? 'visiblePainted' : 'none');
+  };

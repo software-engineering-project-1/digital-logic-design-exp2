@@ -1,0 +1,47 @@
+#+Title : Documentation on MULtiplexer Experiment
+#+Author : Sadhana
+
+** Technologies Used : HTML,CSS,javascript
+
+** Simcirjs library has been used for implementing this Experiment.
+
+** Details of files :
+- Experiment_mux.html - This file is related UI of the experiment.
+
+- Experiment_mux.css - This file has css related to
+  Experiment_mux.html file.
+
+- Experiment_create.html - Using this, we can get the data in json
+  format. By clicking on get data button below, we get all the devices
+  and connectors data in json format. We can edit the data or design a
+  circuit and click on set data button to get the data we want.
+
+- Experiment_mux.js - This file is to check devices and connections of
+  the experiment, when the user tries to design a circuit. If there are
+  any misplaced connections/extra devices has been used, it alerts a
+  message i.e., it is incorrect/please check the connections. This has
+  been written based in json format, which is in
+  Experiment_mux.html file.
+  
+- simcir.js - It's a js file of library, which has been over Written
+  to implement the functionality of the experiment. Like when the user
+  clicks on input button, background color of the device should
+  change.  Based on the color change conditions statements are written
+  to output the result.  Still some part is left to implement i.e.,
+  When the user clicks on input buttons and simulate, it should check
+  for connections and then display the output. So, for this I tried to
+  use the checkComponents and checkConnections functions, but
+  simcir.js file is not accessing the functions from Experiment_mux.js
+  file.
+
+- simcir-library.js - using this file we can edit the devices.
+
+** How to perform the experiment :
+- Click on the load multiplxer button, for automatically generating
+  the circuit.
+
+- Click on A, B, S devices to give the inputs. Then you can see
+  background color of the device changing to green. That means value
+  is 1. By again clicking in it, color gets disappeared. That means
+  value is 0. By clicking on simulate button, you can see the output
+  on Z device.

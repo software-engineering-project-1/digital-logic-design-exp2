@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/simcir/simcir.css" />
+    <link rel="stylesheet" type="text/css" href="css/simcir/simcir-basicset.css" />
+    <link rel="stylesheet" type="text/css" href="css/simcir/Experiment_mux.css" />
+    <script type="text/javascript" src="js/jquery/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/simcir/simcir.js"></script>
+    <script type="text/javascript" src="js/simcir/simcir-library.js"></script>
+    <script type="text/javascript" src="js/simcir/simcir-basicset.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+      var $s = simcir;
+      var $simcir = $('#mySimcir');
+      var getCircuitData = function() {
+        return $s.controller(
+          $simcir.find('.simcir-workspace') ).text();
+      };
+      var setCircuitData = function(data) {
+        $simcir.children().remove();
+        $s.setupSimcir($simcir, JSON.parse(data) );
+      };
+      // button click events
+      $('#getDataBtn').click(function() {
+        $('#dataArea').val(getCircuitData() );
+      });
+      $('#setDataBtn').click(function() {
+        setCircuitData($('#dataArea').val() );
+      });
+      // load default (just specifies circuit size).
+      setCircuitData('{ "width":935, "height":550 }');
+    });
+    </script>
+    <title>Multiplexer</title>
+  </head>
+  <body>
+  <div class="well well-sm" style="background-color:#000040">Multiplexer Simulation</div><!-- header -->
+  <div class="container-fluid"> <!-- Start of container -->
+    <ul class="nav nav-pills">
+      <li><a href="#">Simulate</a></li>
+      <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">load Multiplexers<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">2x1 Mux</a></li>
+        <li><a href="#">4x1 Mux</a></li>
+        <li><a href="#">8x1 Mux</a></li>                        
+      </ul>
+      </li>
+      <li><a href="#" onclick="window.location.href">Clear</a></li>
+      <li><a href="#">Verify</a></li>
+    </ul>&nbsp;&nbsp;
+    <div class="row"><!-- start of first row -->
+      <div class="col-sm-12"><!-- start of first column -->
+      <div class="simcir" id="mySimcir"> <!-- library --><!-- paste here your circuit data --></div><!-- library end -->
+        <div>
+          <button id="getDataBtn">v get data v</button>
+          <button id="setDataBtn">^ set data ^</button>
+        </div>
+        <textarea id="dataArea" style="width:600px; height:200px;"></textarea>
+      </div><!-- end of first column -->
+    </div><!-- end of first row -->
+  </div><!--end of container -->
+  </body>
+</html>

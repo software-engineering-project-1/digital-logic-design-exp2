@@ -1,0 +1,14 @@
+.well
+{
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  /*background-color: #000040;*/
+}
+ul
+{
+	font-size: 20px;
+	border:2px solid blue;
+}
+
+
